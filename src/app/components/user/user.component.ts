@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
+import { UserAddress } from '../../interface/User';
+import { Post } from '../../interface/Post';
 
 @Component({
   selector: 'app-user',
@@ -11,7 +13,7 @@ export class UserComponent implements OnInit {
   name:string; // OR  name:string = "test"
   age:number;
   email:string;
-  address:Address;
+  address:UserAddress;
   hobbies:string[]; //either string, number etc
   hello:any;
   posts:Post[];
@@ -60,17 +62,4 @@ export class UserComponent implements OnInit {
     this.isEdit = !this.isEdit;
   }
 
-}
-
-interface Address{
-  street:string,
-  city:string,
-  state:string
-}
-
-interface Post{
-  id:number,
-  title:string,
-  body:string,
-  userId:number
 }
